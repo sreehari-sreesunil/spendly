@@ -1,0 +1,189 @@
+/* ------------------------------------------------------------------ */
+/* Landing hero (centered layout + dashboard preview)                  */
+/* ------------------------------------------------------------------ */
+
+.lh {
+    --lh-green: #4a9b78;
+    padding: 5rem 2rem 5rem;
+    text-align: center;
+}
+
+.lh-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lh-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid #cfe5d9;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.45rem 1.25rem;
+    border-radius: 999px;
+    margin-bottom: 2.75rem;
+}
+
+.lh-badge-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--lh-green);
+}
+
+.lh-title {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(2.5rem, 6vw, 4.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 2rem;
+}
+
+.lh-title span {
+    display: block;
+    color: var(--lh-green);
+}
+
+.lh-subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
+    line-height: 1.75;
+    color: var(--ink-muted);
+    max-width: 720px;
+    margin: 0 auto 2.75rem;
+}
+
+.lh-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 4.5rem;
+}
+
+.lh-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    padding: 1.15rem 2.5rem;
+    border-radius: 14px;
+    transition: background 0.2s;
+}
+
+.lh-btn:hover { background: var(--accent); }
+
+/* Dashboard preview window */
+
+.lh-window {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 1.5rem 1.5rem 1.75rem;
+    text-align: left;
+}
+
+.lh-dots {
+    display: flex;
+    gap: 0.6rem;
+    margin: 0 0 1.5rem 0.2rem;
+}
+
+.lh-dots i {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: block;
+}
+
+.lh-dots i:nth-child(1) { background: #e59a9a; }
+.lh-dots i:nth-child(2) { background: #f0c374; }
+.lh-dots i:nth-child(3) { background: #a8dcc8; }
+
+.lh-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+    margin-bottom: 1.1rem;
+}
+
+.lh-stat,
+.lh-bars {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.lh-stat { padding: 1.5rem 1.6rem; }
+
+.lh-stat-label {
+    font-size: 1rem;
+    color: var(--ink-faint);
+    margin-bottom: 0.6rem;
+}
+
+.lh-stat-value {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.lh-stat-note {
+    font-size: 1rem;
+    color: var(--ink-faint);
+}
+
+.lh-stat-note.is-up { color: var(--danger); }
+.lh-stat-note.is-good { color: var(--lh-green); }
+
+.lh-bars {
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem;
+}
+
+.lh-bar-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lh-bar-label {
+    font-size: 1.1rem;
+    color: var(--ink-muted);
+    text-align: right;
+}
+
+.lh-bar-track {
+    height: 14px;
+    background: var(--border-soft);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.lh-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.lh-bar-food   { background: #e5a244; }
+.lh-bar-travel { background: #4a86d6; }
+.lh-bar-bills  { background: #7e6fd1; }
+
+@media (max-width: 700px) {
+    .lh { padding: 3rem 1rem; }
+    .lh-stats { grid-template-columns: 1fr; }
+    .lh-actions { margin-bottom: 3rem; }
+    .lh-btn { padding: 1rem 1.75rem; font-size: 1rem; }
+    .lh-bar-row { grid-template-columns: 60px 1fr; }
+}
